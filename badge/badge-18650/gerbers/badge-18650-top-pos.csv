@@ -1,0 +1,7 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"G***","LOGO","east-van-arrow-silk",147.320000,-117.475000,-90.000000,top
+"J1","Conn_01x03","PinHeader_1x03_P2.54mm_Horizontal",182.895000,-104.705000,90.000000,top
+"SW1","SW_DIP_x04","DIP-8_W7.62mm_LongPads",240.030000,-128.270000,-90.000000,top
+"U6","D5641CSR","D5641CSR",251.460000,-123.825000,90.000000,top
+"X1","Badgelife_sao_connector_v169bis","Badgelife-SAOv169-BADGE-2x3",112.140000,-99.060000,0.000000,top
+"X2","Badgelife_sao_connector_v169bis","Badgelife-SAOv169-BADGE-2x3",266.537898,-99.060000,0.000000,top
