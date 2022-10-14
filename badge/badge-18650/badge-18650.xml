@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/tom/git/TomKeddie/prj-supercon2022/badge/badge-18650/badge-18650.kicad_sch</source>
-    <date>Fri 14 Oct 2022 02:33:40 PM</date>
+    <date>Fri 14 Oct 2022 02:41:31 PM</date>
     <tool>Eeschema 6.0.7-f9a2dced07~116~ubuntu22.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -901,7 +901,11 @@
       <value>MCP1700-3002E_SOT23</value>
       <footprint>badge:SOT-23</footprint>
       <datasheet>http://ww1.microchip.com/downloads/en/DeviceDoc/20001826D.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C62244</field>
+      </fields>
       <libsource lib="badge" part="MCP1700-3002E_SOT23" description="250mA Low Quiscent Current LDO, 3.0V output, SOT-23"/>
+      <property name="LCSC" value="C62244"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="badge-18650.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>

@@ -21,7 +21,7 @@ Comment,Designator,Footprint,LCSC
 "NS8002","U1","badge:SO-8_3.9x4.9mm_P1.27mm","C87265"
 "DW01","U2","badge:SOT-23-6","C181096"
 "PM8205A","U3","badge:SOT-23-6","C2827645"
-"MCP1700-3002E_SOT23","U4","badge:SOT-23",""
+"MCP1700-3002E_SOT23","U4","badge:SOT-23","C62244"
 "STM32F030F4Px","U5","badge:TSSOP-20_4.4x6.5mm_P0.65mm",""
 "D5641CSR","U6","badge:D5641CSR",""
 "Badgelife_sao_connector_v169bis","X1,X2","badge:Badgelife-SAOv169-BADGE-2x3",""
