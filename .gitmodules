@@ -1,0 +1,3 @@
+[submodule "badge/2022_supercon_badge_sdk"]
+	path = badge/2022_supercon_badge_sdk
+	url = git@github.com:furrysalamander/2022_supercon_badge_sdk.git
