@@ -7,3 +7,6 @@
 [submodule "badge/2022-Supercon6-Badge-Tools"]
 	path = badge/2022-Supercon6-Badge-Tools
 	url = git@github.com:Hack-a-Day/2022-Supercon6-Badge-Tools.git
+[submodule "micropython-workshop/supercon6"]
+	path = micropython-workshop/supercon6
+	url = git@github.com:pimoroni/supercon6.git
