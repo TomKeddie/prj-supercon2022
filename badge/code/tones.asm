@@ -1,84 +1,247 @@
-;  a3f    208     // 208 Hz
-;  b3f    233     // 233 Hz
-;  b3     247     // 247 Hz
 ;  c4     261     // 261 Hz MIDDLE C
-;  c4s    277     // 277 Hz
-;  e4f    311     // 311 Hz    
-;  f4     349     // 349 Hz 
-;  a4f    415     // 415 Hz  
-;  b4f    466     // 466 Hz 
-;  b4     493     // 493 Hz 
-;  c5     523     // 523 Hz 
-;  c5s    554     // 554 Hz
-;  e5f    622     // 622 Hz  
-;  f5     698     // 698 Hz 
-;  f5s    740     // 740 Hz
-;  a5f    831     // 831 Hz 
+;  d4     293
+;  e4     330
+;  g4     392
 
 start:
+	mov r0,1
+	mov [0xf1],r0
+	
+        gosub e4		
+	gosub pause
+        gosub d4
+	gosub pause
         gosub c4
+	gosub pause
+        gosub d4
+	gosub pause
+
+        gosub e4
+	gosub pause
+        gosub e4
+	gosub pause
+        gosub e4
+	gosub pause
+
+        gosub d4
+	gosub pause
+        gosub d4
+	gosub pause
+        gosub d4
+	gosub pause
+
+        gosub e4
+	gosub pause
+        gosub g4
+	gosub pause
+        gosub g4
+	gosub pause
+
+        gosub e4
+	gosub pause
+        gosub d4
+	gosub pause
+        gosub c4
+	gosub pause
+
+        gosub d4
+	gosub pause
+        gosub e4
+	gosub pause
+        gosub e4
+	gosub pause
+        gosub e4
+	gosub pause
+        gosub e4
+	gosub pause
+
+        gosub d4
+	gosub pause
+        gosub d4
+	gosub pause
+        gosub e4
+	gosub pause
+        gosub d4
+	gosub pause
+        gosub c4
+	gosub pause
+
 done:
 	jr done
 
-a5f:
-	mov r1, 1
+pause:
 	mov r6, 7
 	mov r7, 15
 	mov r8, 15
-a5f_loop:
-	xor out,r1
-	mov r2,15
-delay0:
-	dec r2
-        skip z,1
-	jr delay0 ; 1042Hz
-	and r1,r1 ; 1026Hz
-	and r1,r1 ; 1000Hz
-	and r1,r1 ; 986Hz
-	and r1,r1 ; 962Hz
-	and r1,r1 ; 949Hz
-	and r1,r1 ; 923Hz
-	and r1,r1 ;
-	and r1,r1 ;
-	and r1,r1 ; 850Hz
+p_loop:
+	; nested loop counters
 	dec r8
 	skip nz,2
 	mov r8,15 ; reload lsb
 	dec r7    ; decrement 2sb
 	skip nz,2
-	mov r7,15 ; decrement 3sb
+	mov r7,15
 	dec r6
 	skip nz,1
 	ret r0,0
-	jr a5f_loop
+	jr p_loop
 
+
+
+; ~261Hz for C
 c4:
 	mov r1, 1
-	mov r6, 3
-	mov r7, 13
+	mov r6, 2
+	mov r7, 9
 	mov r8, 15
 c4_loop:
 	xor out,r1
 	mov r2,15
-c4_d0:
+c4_0:
 	dec r2
         skip z,1
-	jr c4_d0 ; 1042Hz
+	jr c4_0 ; 1042Hz
 	mov r2,15
-c4_d1:
+c4_1:
 	dec r2
         skip z,1
-	jr c4_d1 ;  821 Hz
+	jr c4_1 ;  821 Hz
 	mov r2,15
-c4_d2:
+c4_2:
 	dec r2
         skip z,1
-	jr c4_d2 ; 350Hz
+	jr c4_2 ; 350Hz
 	mov r2,15
-c4_d3:
+c4_3:
 	dec r2
         skip z,1
-	jr c4_d3 ; 302Hz
+	jr c4_3 ; 302Hz
+	
+	; nested loop counters
+	dec r8
+	skip nz,2
+	mov r8,15 ; reload lsb
+	dec r7    ; decrement 2sb
+	skip nz,2
+	mov r7,9 ; decrement 3sb
+	dec r6
+	skip nz,2
+	mov out,0
+	ret r0,0
+	jr c4_loop
+
+; ~293Hz for D
+d4:
+	mov r1, 1
+	mov r6, 2
+	mov r7, 10
+	mov r8, 15
+d4_loop:
+	xor out,r1
+	mov r2,15
+d4_0:
+	dec r2
+        skip z,1
+	jr d4_0 ; 1042Hz
+	mov r2,15
+d4_1:
+	dec r2
+        skip z,1
+	jr d4_1 ;  821 Hz
+	mov r2,15
+d4_2:
+	dec r2
+        skip z,1
+	jr d4_2 ; 350Hz
+	mov r2,8
+d4_3:
+	dec r2
+        skip z,1
+	jr d4_3 ; 302Hz
+	
+	; nested loop counters
+	dec r8
+	skip nz,2
+	mov r8,15 ; reload lsb
+	dec r7    ; decrement 2sb
+	skip nz,2
+	mov r7,10 ; decrement 3sb
+	dec r6
+	skip nz,2
+	mov out,0
+	ret r0,0
+	jr d4_loop
+
+; ~330Hz for E
+e4:
+	mov r1, 1
+	mov r6, 2
+	mov r7, 11
+	mov r8, 15
+e4_loop:
+	xor out,r1
+	mov r2,15
+e4_0:
+	dec r2
+        skip z,1
+	jr e4_0 ; 1042Hz
+	mov r2,15
+e4_1:
+	dec r2
+        skip z,1
+	jr e4_1 ;  821 Hz
+	mov r2,15
+e4_2:
+	dec r2
+        skip z,1
+	jr e4_2 ; 350Hz
+	mov r2,3
+e4_3:
+	dec r2
+        skip z,1
+	jr e4_3 ; 302Hz
+	
+	; nested loop counters
+	dec r8
+	skip nz,2
+	mov r8,15 ; reload lsb
+	dec r7    ; decrement 2sb
+	skip nz,2
+	mov r7,11 ; decrement 3sb
+	dec r6
+	skip nz,2
+	mov out,0
+	ret r0,0
+	jr e4_loop
+
+; ~394Hz for G
+g4:
+	mov r1, 1
+	mov r6, 2
+	mov r7, 13
+	mov r8, 15
+g4_loop:
+	xor out,r1
+	mov r2,15
+g4_0:
+	dec r2
+        skip z,1
+	jr g4_0 ; 1042Hz
+	mov r2,15
+g4_1:
+	dec r2
+        skip z,1
+	jr g4_1 ;  821 Hz
+	mov r2,7
+g4_2:
+	dec r2
+        skip z,1
+	jr g4_2 ; 350Hz
+	mov r2,3
+g4_3:
+	dec r2
+        skip z,1
+	jr g4_3 ; 302Hz
 	
 	; nested loop counters
 	dec r8
@@ -91,4 +254,4 @@ c4_d3:
 	skip nz,2
 	mov out,0
 	ret r0,0
-	jr c4_loop
+	jr g4_loop
